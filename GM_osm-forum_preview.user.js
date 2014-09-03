@@ -31,13 +31,14 @@ $("#postpreview div.postmsg").css(
   }
 );
 
-$("div.postmsg").css(
-  {
-    'border-right-width': '1px',
-    'border-style': 'dotted',
-    'border-color': 'gray'
-  }
-);
+if (!window.location.href.match(/^.*\?pid=.*$/g))
+  $("div.postmsg").css(
+    {
+      'border-right-width': '1px',
+      'border-style': 'dotted',
+      'border-color': 'gray'
+    }
+  );
 
 /****************************************************************************
 
