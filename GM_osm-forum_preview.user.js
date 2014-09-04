@@ -43,7 +43,9 @@ if(rwidth == undefined)
 else
   GM_setValue('forum.openstreetmap.org[rwidth]', rwidth);
 
-if(rwidth == undefined)
+var show=!window.location.href.match(/^.*\?pid=.*$/g)
+
+if(rwidth == undefined && show)
   alert('Erro! Pré-visualize post do fórum e volte aqui.');
 
 // rwidth pode ficar defasado sem nunca ser renovado, se o usuário não é leitor
@@ -54,7 +56,7 @@ $("#postpreview div.postmsg").css(
   }
 );
 
-if (!window.location.href.match(/^.*\?pid=.*$/g))
+if (show)
   $("div.postmsg").css(
     {
       'border-right-width': '1px',
