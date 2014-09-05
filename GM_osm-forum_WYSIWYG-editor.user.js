@@ -57,7 +57,7 @@ $("textarea[name='req_message']")
 
 $(document).ready(function() {
   var wbbOpt = {
-    buttons: "bold,italic,underline,|,img,link,|,code"
+    buttons: "bold,italic,underline,strike,|,img,link,|,bullist,numlist,|,quote,code,fontcolor,removeFormat"
   }
   $("#req_message_ta").wysibb(wbbOpt);
   $("div.wysibb-text-editor.wysibb-body")
