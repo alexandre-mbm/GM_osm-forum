@@ -5,7 +5,9 @@
 // @include     http://forum.openstreetmap.org/viewtopic.php?id=*
 // @include     http://forum.openstreetmap.org/viewtopic.php?pid=*
 // @include     http://forum.openstreetmap.org/post.php?tid=*
+// @include     http://forum.openstreetmap.org/post.php?fid=*
 // @include     http://forum.openstreetmap.org/post.php?action=post&tid=*
+// @include     http://forum.openstreetmap.org/post.php?action=post&fid=*
 // @version     1
 // @grant       none
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js
@@ -35,33 +37,6 @@
   SOFTWARE.
 */
 
-/*$("div.infldset.txtarea").attr({
-  style: 'display:none'
-});*/
-
-$("div.box p.buttons input[name='submit']").before(
-  $('<a/>',
-    {
-      href: '#'
-    }
-   )
-  .text('Preparar')
-  .on('click', function(e)
-      {
-        //$("#aquiOK").bbcode($(div.infldset.txtarea).text());
-        var text = $("textarea[name='req_message']").val();
-        alert(text);
-        $("#aquiOK").htmlcode('');
-        $("#aquiOK").bbcode(text);
-        //$("#aquiOK").sync();
-      }
-     )
-);
-
-//<input name="submit" value="Enviar" tabindex="4" accesskey="s" type="submit">
-
-// http://www.sceditor.com/minified/themes/default.min.css
-
 function addStyle(style) {
   var head = document.getElementsByTagName("HEAD")[0];
   var ele = head.appendChild(window.document.createElement( 'style' ));
@@ -69,25 +44,41 @@ function addStyle(style) {
   return ele;
 }
 
-$('<textarea/>',
-  {
-    cols: '75',
-    rows: '7',
-    id: 'aquiOK',
-    style: 'width:100%'
-  }
- )
-.text('Olá')
-.appendTo($('div.inform')[0]);
-
 addStyle('@import "http://cdn.wysibb.com/css/default/wbbtheme.css";');
+
+$("div.infldset.txtarea div").remove();
+
+$("textarea[name='req_message']")
+  .attr(
+    {
+      id: 'req_message_ta'
+    }
+  );
 
 $(document).ready(function() {
   var wbbOpt = {
-    buttons: "bold,italic,underline,|,img,link,|,code,quote"
+    buttons: "bold,italic,underline,|,img,link,|,code"
   }
-  $("#aquiOK").wysibb(wbbOpt);
+  $("#req_message_ta").wysibb(wbbOpt);
+  $("div.wysibb-text-editor.wysibb-body")
+    .css(
+      {
+        'font-size': '15px',
+        'color': 'black',
+        'width': '834px', /* TODO detect*/
+      }
+    );
+  $("div.wysibb-text-editor.wysibb-body code") /* TODO fix: no inline! */
+    .css(
+      {
+        'display': 'inline-block',
+        'padding': '0.75em',
+        'white-space': 'pre',
+        'font-size': '14px',
+        'direction': 'ltr',
+        'text-align': 'left',
+        'color': "white",
+        'background-color': 'black',
+      }
+    );
 });
-
-
-
