@@ -111,4 +111,16 @@ $(document).ready(function() {
         'font-size': '20px'
       }
     );
+  $("div.wysibb-text-editor.wysibb-body ul") /* TODO fix: no inline! */
+    .css(
+      {
+        'list-style': 'disc outside none'
+      }
+    );
+  $("div.wysibb-text-editor.wysibb-body ol") /* TODO fix: no inline! */
+    .css(
+      {
+        'list-style': 'decimal outside none'
+      }
+    );
 });
