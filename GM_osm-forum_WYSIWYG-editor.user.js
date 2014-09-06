@@ -88,7 +88,6 @@ devCSS = "                                                               \
     border-color: gray;                                                  \
   }                                                                      \
   div.wysibb-text-editor.wysibb-body code {                              \
-    display: inline-block;                                               \
     padding: 0.75em;                                                     \
     white-space: pre;                                                    \
     font-size: 14px;                                                     \
@@ -97,6 +96,7 @@ devCSS = "                                                               \
     color: white;                                                        \
     background-color: black;                                             \
     display: block;                                                      \
+    overflow: auto;                                                      \
   }                                                                      \
   div.wysibb-text-editor.wysibb-body ins {                               \
     background-color: #FF0;                                              \
