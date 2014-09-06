@@ -76,51 +76,41 @@ $(document).ready(function() {
     }
   }
   $("#req_message_ta").wysibb(wbbOpt);
-  $("div.wysibb-text-editor.wysibb-body")
-    .css(
-      {
-        'font-size': '15px',
-        'color': 'black',
-        'width': '834px', /* TODO detect*/
-      }
-    );
-  $("div.wysibb-text-editor.wysibb-body code") /* TODO fix: no inline! */
-    .css(
-      {
-        'display': 'inline-block',
-        'padding': '0.75em',
-        'white-space': 'pre',
-        'font-size': '14px',
-        'direction': 'ltr',
-        'text-align': 'left',
-        'color': "white",
-        'background-color': 'black',
-        'display': 'block'
-      }
-    );
-  $("div.wysibb-text-editor.wysibb-body ins") /* TODO fix: no inline! */
-    .css(
-      {
-        'background-color': '#FF0',
-        'text-decoration': 'none'
-      }
-    );
-  $("div.wysibb-text-editor.wysibb-body h5") /* TODO fix: no inline! */
-    .css(
-      {
-        'font-size': '20px'
-      }
-    );
-  $("div.wysibb-text-editor.wysibb-body ul") /* TODO fix: no inline! */
-    .css(
-      {
-        'list-style': 'disc outside none'
-      }
-    );
-  $("div.wysibb-text-editor.wysibb-body ol") /* TODO fix: no inline! */
-    .css(
-      {
-        'list-style': 'decimal outside none'
-      }
-    );
 });
+
+devCSS = "                                                               \
+  div.wysibb-text-editor.wysibb-body {                                   \
+    font-size: 15px;                                                     \
+    color: black;                                                        \
+    width: 834px;   /* TODO detect */                                    \
+    border-right-width: 1px;                                             \
+    border-style: dotted;                                                \
+    border-color: gray;                                                  \
+  }                                                                      \
+  div.wysibb-text-editor.wysibb-body code {                              \
+    display: inline-block;                                               \
+    padding: 0.75em;                                                     \
+    white-space: pre;                                                    \
+    font-size: 14px;                                                     \
+    direction: ltr;                                                      \
+    text-align: left;                                                    \
+    color: white;                                                        \
+    background-color: black;                                             \
+    display: block;                                                      \
+  }                                                                      \
+  div.wysibb-text-editor.wysibb-body ins {                               \
+    background-color: #FF0;                                              \
+    text-decoration: none;                                               \
+  }                                                                      \
+  div.wysibb-text-editor.wysibb-body h5 {                                \
+    font-size: 20px;                                                     \
+  }                                                                      \
+  div.wysibb-text-editor.wysibb-body ul {                                \
+    list-style: disc outside none;                                       \
+  }                                                                      \
+  div.wysibb-text-editor.wysibb-body ol {                                \
+    list-style: decimal outside none;                                    \
+  }                                                                      \
+";
+
+addStyle(devCSS);
