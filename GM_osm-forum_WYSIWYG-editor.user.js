@@ -14,6 +14,7 @@
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js
 // @require     http://cdn.wysibb.com/js/jquery.wysibb.min.js
 // @require     http://www.wysibb.com/js/custom.js
+// @require     http://raw.githubusercontent.com/alexandre-mbm/GM_osm-forum/master/WYSIWYG-editor_pt-BR.js
 // ==/UserScript==
 
 /*
@@ -58,17 +59,18 @@ $("textarea[name='req_message']")
 
 $(document).ready(function() {
   var wbbOpt = {
+    lang: 'pt',
     buttons: "bold,italic,underline,mark,strike,|,img,link,|,bullist,numlist,title,|,quote,code,fontcolor,removeFormat",
     allButtons: {
       title: {
-        title: 'Title',
+        title: WBBLANG.pt.title,
         buttonText: 'h',
         transform: {
           '<h5>{SELTEXT}</h5>':'[h]{SELTEXT}[/h]'
         }
       },
       mark: {
-        title: 'Mark',
+        title: WBBLANG.pt.mark,
         buttonText: 'm',
         transform: {
           '<ins>{SELTEXT}</ins>':'[ins]{SELTEXT}[/ins]'
