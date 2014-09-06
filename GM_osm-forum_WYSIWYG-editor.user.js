@@ -8,6 +8,7 @@
 // @include     http://forum.openstreetmap.org/post.php?fid=*
 // @include     http://forum.openstreetmap.org/post.php?action=post&tid=*
 // @include     http://forum.openstreetmap.org/post.php?action=post&fid=*
+// @include     http://forum.openstreetmap.org/edit.php?id=*
 // @version     1
 // @grant       none
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js
