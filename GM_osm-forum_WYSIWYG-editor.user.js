@@ -112,6 +112,11 @@ devCSS = "                                                               \
   div.wysibb-text-editor.wysibb-body ol {                                \
     list-style: decimal outside none;                                    \
   }                                                                      \
+  div.wysibb-text-editor.wysibb-body img {                               \
+    max-width: 98%;                                                      \
+    vertical-align: middle;                                              \
+    margin: 7px 0.5em 7px 0px;                                           \
+  }                                                                      \
 ";
 
 addStyle(devCSS);
