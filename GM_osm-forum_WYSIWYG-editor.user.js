@@ -57,7 +57,23 @@ $("textarea[name='req_message']")
 
 $(document).ready(function() {
   var wbbOpt = {
-    buttons: "bold,italic,underline,strike,|,img,link,|,bullist,numlist,|,quote,code,fontcolor,removeFormat"
+    buttons: "bold,italic,underline,mark,strike,|,img,link,|,bullist,numlist,title,|,quote,code,fontcolor,removeFormat",
+    allButtons: {
+      title: {
+        title: 'Title',
+        buttonText: 'h',
+        transform: {
+          '<h5>{SELTEXT}</h5>':'[h]{SELTEXT}[/h]'
+        }
+      },
+      mark: {
+        title: 'Mark',
+        buttonText: 'm',
+        transform: {
+          '<ins>{SELTEXT}</ins>':'[ins]{SELTEXT}[/ins]'
+        }
+      }
+    }
   }
   $("#req_message_ta").wysibb(wbbOpt);
   $("div.wysibb-text-editor.wysibb-body")
@@ -79,6 +95,20 @@ $(document).ready(function() {
         'text-align': 'left',
         'color': "white",
         'background-color': 'black',
+        'display': 'block'
+      }
+    );
+  $("div.wysibb-text-editor.wysibb-body ins") /* TODO fix: no inline! */
+    .css(
+      {
+        'background-color': '#FF0',
+        'text-decoration': 'none'
+      }
+    );
+  $("div.wysibb-text-editor.wysibb-body h5") /* TODO fix: no inline! */
+    .css(
+      {
+        'font-size': '20px'
       }
     );
 });
